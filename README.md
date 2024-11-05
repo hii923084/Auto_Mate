@@ -26,7 +26,7 @@ The **Vulnerability Scanner** is a command-line tool designed to retrieve and di
 1. **Clone the Repository**: Clone the project repository to your local machine.
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:hii923084/Auto_Mate.git
    cd vulnerability-scanner
    ```
 
