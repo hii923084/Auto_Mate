@@ -1,70 +1,56 @@
-
 # Vulnerability Scanner
 
 ## Overview
 
-The **Vulnerability Scanner** is a command-line tool designed to identify vulnerabilities in specific software products using the [Vulners API](https://vulners.com/). By entering the product name and version, users can retrieve a list of known vulnerabilities, complete with details such as CVSS scores, severity ratings, and publication dates.
+The **Vulnerability Scanner** is a command-line tool designed to retrieve and display known vulnerabilities for specific software products based on product name and version. Utilizing the Vulners API, this tool allows users to quickly identify potential security issues along with essential details like CVSS scores, severity ratings, and publication dates.
 
 ## Features
 
-- **Vulnerability Search**: Quickly search for vulnerabilities based on the software product name and version.
-- **CVSS Scoring**: Provides the CVSS score for each vulnerability to indicate severity.
-- **Formatted Output**: Results are presented in a user-friendly format for easy readability.
+- **Vulnerability Search**: Finds vulnerabilities based on product name and version input.
+- **CVSS Scoring**: Provides CVSS scores for quick severity assessment.
+- **Detailed Information**: Displays vulnerability descriptions, severity, publication dates, and URLs for further information.
+- **Sorted Output**: Results are displayed in descending order of CVSS score for easy prioritization.
 
-## Requirements
+## Prerequisites
 
-- **Python 3.6 or higher**
-- **`requests` library**
+1. **Python**: Ensure Python 3.6 or higher is installed. You can download it from [python.org](https://www.python.org/).
+2. **Vulners API Key**: Obtain an API key from [Vulners](https://vulners.com/) by creating a free account and generating an API key under the "API Keys" section in your account dashboard.
+3. **Requests Library**: Install the `requests` library, if not already installed.
 
-To install the required library, run:
+   ```bash
+   pip install requests
+   ```
 
-```bash
-pip install requests
-```
+## Installation and Setup
 
-## Getting an API Key
-
-To access the Vulners API, you need an API key. Follow these steps to obtain one:
-
-1. Visit the [Vulners website](https://vulners.com/).
-2. Sign up for an account or log in if you already have one.
-3. Navigate to the API section of your account dashboard.
-4. Generate a new API key and copy it for later use in the application.
-
-## Usage
-
-### Clone the Repository
-
-1. Clone the repository to your local machine:
+1. **Clone the Repository**: Clone the project repository to your local machine.
 
    ```bash
    git clone <repository-url>
    cd vulnerability-scanner
    ```
 
-### Run the Application
+2. **Add Your API Key**: Open the file `vulnerability_scanner.py` and replace the placeholder `YOUR_API_KEY` with your actual Vulners API key.
 
-2. Execute the script using Python:
+## Usage
+
+1. **Run the Application**: Execute the script using Python:
 
    ```bash
    python vulnerability_scanner.py
    ```
 
-### Input Parameters
+2. **Input Parameters**:
+   - You will be prompted to enter:
+     - **Product Name**: Name of the software product (e.g., `MySQL`).
+     - **Product Version**: Version of the software product (e.g., `2.3.4`).
 
-3. You will be prompted to enter:
-   - **Product Name**: Name of the software product (e.g., `MySQL`).
-   - **Product Version**: Version of the software product (e.g., `2`).
-   - **API Key**: Enter the API key you obtained from Vulners.
+3. **View Results**: The application will display the top vulnerabilities found for the specified product and version, sorted by CVSS score.
 
-### View Results
-
-4. The application will output the top vulnerabilities found, sorted by CVSS score.
-
-## Example Output
+### Example Output
 
 ```plaintext
-Top 10 vulnerabilities for MySQL version 2:
+Top 10 vulnerabilities for MySQL version 2.3.4:
 
 1. Title: UBUNTU-CVE-2023-24531
    Description: Command go env is documented as outputting a shell script...
@@ -72,18 +58,20 @@ Top 10 vulnerabilities for MySQL version 2:
    Severity: CRITICAL
    Published Date: 2024-07-02
    URL: https://osv.dev/vulnerability/UBUNTU-CVE-2023-24531
-   --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 ```
 
 ## Contributing
 
-Contributions are welcome! If you encounter issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
 ## Acknowledgments
 
-- Thanks to the [Vulners API](https://vulners.com/) for providing comprehensive vulnerability data.
-- Special thanks to the open-source community for their ongoing support and contributions.
+- Special thanks to [Vulners](https://vulners.com/) for providing comprehensive vulnerability data.
+- Thanks to the open-source community for their ongoing support and contributions.
+
+---
